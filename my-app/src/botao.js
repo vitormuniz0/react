@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
+import useLog from './useLog';
 
 const Botao = () =>{
     const[soma, setSoma] = useState(0);
     const[frase, setFrase] = useState("Meu nome é ");
+    
+    useLog(soma); // hooks customizado
     
     console.log ("Soma", soma);
     console.log ("Frase", frase);
