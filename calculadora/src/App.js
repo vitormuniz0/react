@@ -1,11 +1,29 @@
 import React, { useState } from 'react';
 import './App.css';
+import './historico.js';
+import Historico from './historico.js';
 
 function App() {
   
   const [primeiroNumber, setPrimeiroNumber] = useState(0);
   const [segundoNumber, setSegundoNumber] = useState(0);
   const [result, setResult] = useState(0);
+
+  const soma = () =>{
+    setResult(primeiroNumber + segundoNumber)
+  }
+
+  const subtrair = () =>{
+    setResult(primeiroNumber - segundoNumber)
+  }
+
+  const multiplicar = () =>{
+    setResult(primeiroNumber * segundoNumber)
+  }
+
+  const dividir = () =>{
+    setResult(primeiroNumber / segundoNumber)
+  }
   
   return (
     <>
@@ -23,10 +41,14 @@ function App() {
       </label>
       <span>Resultado: {result}</span> <br/> <br/>
     </div>
-    <button onClick={ () => setResult(primeiroNumber + segundoNumber)}>+</button>
-    <button onClick={ () => setResult(primeiroNumber - segundoNumber)}>-</button>
-    <button onClick={ () => setResult(primeiroNumber * segundoNumber)}>*</button>
-    <button onClick={ () => setResult(primeiroNumber / segundoNumber)}>/</button>
+    <button onClick={soma}>+</button>
+    <button onClick={subtrair}>-</button>
+    <button onClick={multiplicar}>*</button>
+    <button onClick={dividir}>/</button> <br/> <br/>
+    
+    <Historico resultado={result}></Historico>
+  
+
     </>
   );
 }
