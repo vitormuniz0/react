@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-import './historico.js';
 import Historico from './historico.js';
 
 function App() {
@@ -10,6 +9,7 @@ function App() {
   const [result, setResult] = useState(0);
 
   const soma = () =>{
+
     setResult(primeiroNumber + segundoNumber)
   }
 
