@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
-import Historico from './historico.js';
+import Historico from '../Molecules/historico';
 
 function App() {
   

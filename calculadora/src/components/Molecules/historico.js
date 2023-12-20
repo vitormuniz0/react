@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import App from '../App.js';
+import App from '../Organismos/App';
+import { useState } from 'react';
 
 const Historico = (props) => {
   const [historico, setHistorico] = useState([]);

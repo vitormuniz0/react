@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import useLog from '../useLog';
+import useLog from '../../useLog';
 
 const Botao = () =>{
     const[soma, setSoma] = useState(0);
