@@ -1,6 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import Botao from './botao';
+import Botao from './components/Atoms/Button';
+import Span from './components/Atoms/Span.tsx';
+import withToggle from "./components/HOCs/withToggle.tsx";
+
 
 function App() {
   return (
@@ -13,6 +16,7 @@ function App() {
           Meu Primeiro App
           </p>
           <Botao></Botao>
+          <Span></Span>
           <a
             className="App-link"
             href="https://reactjs.org"
