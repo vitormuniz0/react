@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import Botao from './components/Atoms/Button';
-import Span from './components/Atoms/Span.tsx';
 import withToggle from "./components/HOCs/withToggle.tsx";
+import Span from './components/Atoms/span.tsx';
 
 
 function App() {
