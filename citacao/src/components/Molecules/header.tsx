@@ -1,18 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Citacao from "./citacao.tsx";
 
 const Header = () => {
 
-    const votacao = () =>{
-        return(
-            <Citacao autor={""} texto={""}></Citacao>
-        );
+    const [mostrar, setMostrar] = useState(false);
+
+    const handleToggle = () => {
+        setMostrar(!mostrar)
     }
 
     return (
         <>
-            <h2>Bem-Vindo</h2> <br/>
-            <button onClick={votacao}>Iniciar Votação</button>
+            <div>
+                <h2>Bem-Vindo</h2> <br/>
+                <button onClick={handleToggle}>Iniciar Votação</button>
+                {mostrar && <Citacao autor={"aaaaaa"} texto={"aaaaaaa"} ></Citacao>}
+            </div>
         </>
     )
 }
+
+export default Header;
