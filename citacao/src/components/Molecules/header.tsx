@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Citacao from "./citacao.tsx";
 import Nota from "./notas.tsx";
+import { exit } from "process";
 
 const Header = () => {
 
@@ -22,11 +23,20 @@ const Header = () => {
     const [indice , setIndice] = useState(0);
 
     const mostrarProximaFrase = () => {
-        setIndice((prevIndice) => (prevIndice + 1) % frases.length)
+        if(indice < frases.length - 1) {
+            setIndice((prevIndice) => prevIndice + 1);
+        } else {
+        setMostrar(false);
+        };
     }
 
     const handleToggle = () => {
         setMostrar(!mostrar)
+        setIndice(0);
+    }
+
+    const HandleClick = () => {
+        mostrarProximaFrase();
     }
 
     return (
@@ -35,7 +45,8 @@ const Header = () => {
                 <h2>Bem-Vindo</h2> <br/>
                 <button onClick={handleToggle}>Iniciar Votação</button>
                 <h2>{frases[indice]}</h2>
-                <br/> {mostrar && <Nota onClick={mostrarProximaFrase}></Nota>}
+                <br/> {mostrar && <Nota handleClick={HandleClick}></Nota>}
+                
             </div>
         </>
     )
