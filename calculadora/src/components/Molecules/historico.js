@@ -11,7 +11,7 @@ const Historico = (props) => {
 
   return (
     <>
-      <button onClick={armazenar}>Armazenar</button> <br />
+      <button onClick={armazenar}>Armazenar</button> <br/>
       <span>
         Historico: {historico.map((item, index) => <div key={index}>{item}</div>)}
       </span>

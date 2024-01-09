@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './components/Molecules/header.tsx';
+import Citacao from './components/Molecules/citacao.tsx';
+import Nota from './components/Molecules/notas.tsx';
+
 
 
 function App() {
@@ -11,5 +14,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
