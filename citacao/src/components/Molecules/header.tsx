@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import Citacao from "./citacao.tsx";
 import Nota from "./notas.tsx";
 import { exit } from "process";
+import Votados from "./votados.tsx";
 
-const Header = () => {
+const Header = (props) => {
 
+    const[mostrarLista, setMostrarLista] = useState(false);
     const [mostrar, setMostrar] = useState(false);
     const [frases, setFrases] = useState([
         <Citacao autor={"aa"} texto={"aa"}></Citacao>,
@@ -22,6 +24,11 @@ const Header = () => {
 
     const [indice , setIndice] = useState(0);
 
+    const [lista , setLista] = useState([
+        <Votados autor={"aa"} texto={"aa"} nota={props.value}></Votados>,
+        <Votados autor={"bb"} texto={"bb"} nota={0}></Votados>,
+    ])
+
     const mostrarProximaFrase = () => {
         if(indice < frases.length - 1) {
             setIndice((prevIndice) => prevIndice + 1);
@@ -37,6 +44,9 @@ const Header = () => {
 
     const HandleClick = () => {
         mostrarProximaFrase();
+        setMostrarLista(!mostrarLista)
+
+        
     }
 
     return (
@@ -46,6 +56,8 @@ const Header = () => {
                 <button onClick={handleToggle}>Iniciar Votação</button>
                 <h2>{frases[indice]}</h2>
                 <br/> {mostrar && <Nota handleClick={HandleClick}></Nota>}
+                <h2>{mostrarLista && [lista[indice]]}</h2>
+                
                 
             </div>
         </>

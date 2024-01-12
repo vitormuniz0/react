@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "./header";
 
 
-const Nota = ({handleClick}) => {
+
+const Nota = ({handleClick},{value}) => {
 
     
     return (
@@ -16,7 +16,7 @@ const Nota = ({handleClick}) => {
             <button value={7} onClick={handleClick}>7</button>
             <button value={8} onClick={handleClick}>8</button>
             <button value={9} onClick={handleClick}>9</button>
-            <button value={10}onClick={handleClick}>10</button>
+            <button value={10} onClick={handleClick}>10</button>
         </>
     )
 }
